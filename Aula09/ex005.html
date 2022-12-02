@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: rgb(13, 77, 77);
+            color: rgb(255, 255, 255);
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com o DOM</h1>
+    <p>Aqui vai para o resultado</p>
+    <p>Apredendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <!--div id="msg">Clique em mim</div--> <!-- Dá para fazer a busca usando id, nome ou class -->
+    <div id="msg">Clique em mim</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[1];
+        
+        window.document.write('Está escrito assim: ' + p1.innerText); //texto que esta dentro do paragrafo
+        p1.style.color = 'blue';
+        document.write(p1.innerHTML); // retorna o paragrafo com as formatações
+        //RETORNO USANDO ID
+        var d = window.document.getElementById('msg');
+        d.style.background = 'green'; //alterando cor da div
+        d.innerText = 'Estou aguardando...'; // alterando o texto da div
+        //RETORNO USANDO NAME
+        var d = window.document.getElementsByName('msg')[0];
+        d.innerText = 'Olá!';     
+        //RETORNO USANDO SELETOR
+        var d = window.document.querySelector('div#msg'); //usando id
+        var d = window.document.querySelector('div.msg'); //usando class
+        
+    </script>
+</body>
+</html>
